@@ -2,9 +2,12 @@ import { ethers } from 'ethers'
 
 export const compareAbiEvents = async(spinner: any, toolbox: any, dataSource: any, newAbiJson: any): Promise<boolean> => {
   // Convert to Interface
-  const newAbi = new ethers.utils.Interface(newAbiJson)
+  const newAbi = new ethers.Interface(newAbiJson)
   // Get events signatures
-  const newAbiEvents = Object.keys(newAbi.events)
+  const newAbiEvents: string[] = [];
+  newAbi.forEachEvent((event: ethers.EventFragment) => {
+      event.name && newAbiEvents.push(event.name)
+  })
   // Fetch current dataSource events signatures from subgraph.yaml
   const currentAbiEvents = dataSource.mapping.eventHandlers.map((handler: { event: string }) => { return handler.event })
   // Check for renamed or replaced events
