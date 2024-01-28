@@ -7,7 +7,6 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build",
     "lint": "eslint . --ext .ts"
   },
   "files": [
@@ -25,8 +24,8 @@
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "ethers": "^5.6.5",
     "hardhat": "^2.13.0",
     "mocha": "^9.2.2",
@@ -39,5 +38,9 @@
     "@graphprotocol/graph-cli": ">= 0.44.0",
     "@graphprotocol/graph-ts": ">= 0.29.3",
     "hardhat": ">=2.13.0"
+  },
+  "dependencies": {
+    "gluegun": "^5.1.6",
+    "immutable": "5.0.0-beta.5"
   }
 }
