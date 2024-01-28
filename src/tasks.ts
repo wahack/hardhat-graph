@@ -87,7 +87,7 @@ task("init", "Initialize a subgraph")
     // Generate scripts in package.json
     await generatePackageScripts(toolbox, subgraphName, directory)
     // Generate docker-compose.yaml
-    await generateDockerCompose(toolbox)
+    // await generateDockerCompose(toolbox)
 
     const gitignore = await initGitignore(toolbox, directory)
     if (gitignore !== true) {
