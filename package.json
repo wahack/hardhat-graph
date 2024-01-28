@@ -35,10 +35,5 @@
     "yaml": "^2.0.1",
     "gluegun": "^5.1.6",
     "immutable": "5.0.0-beta.5"
-  },
-  "peerDependencies": {
-    "@graphprotocol/graph-cli": ">= 0.44.0",
-    "@graphprotocol/graph-ts": ">= 0.29.3",
-    "hardhat": ">=2.13.0"
   }
 }
